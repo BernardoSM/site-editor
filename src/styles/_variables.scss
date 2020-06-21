@@ -1,0 +1,116 @@
+//Font weight
+$thin: 200;
+$light: 300;
+$regular: normal;
+$medium: 500;
+$semibold: 600;
+$bold: bold;
+
+//Font
+$font: Nunito;
+
+//Colors
+$primary: #658FFF;
+$white: #FFF;
+$white-secondary: #FBFBFB;
+$white-dark: #F6F6F6;
+$gray: #545454;
+$gray-light: #949494;
+$transparent: rgba(1, 1, 1, 0);
+
+$scrollbar-width: 5px;
+$scrollbar-padding: 15px;
+
+.ProseMirror {
+	outline: 0;
+}
+
+*::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: $transparent;
+	opacity: 0;
+}
+
+*::-webkit-scrollbar
+{
+	height: (($scrollbar-padding * 2) + $scrollbar-width);
+	width: 6px;
+	height: 6px;
+	background-color: $transparent;
+	opacity: 0;
+	height: 10px;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	width: 6px;
+	height: 6px;
+	border-radius: 10px;
+	background-color: lighten( $gray-light, 25% );
+	background-clip: padding-box;
+
+	@media (max-width: 991px) {
+		border-radius: 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $primary;
+	transition: 0.2s;
+
+	&:hover {
+		transition: 0.2s;
+		color: darken($primary, 10);
+	}
+}
+
+.btn {
+	text-decoration: none;
+	border: none;
+	border-radius: 5px;
+	font-family: $font;
+	font-style: normal;
+	font-weight: $bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: $gray;
+	height: 53px;
+	padding: 0 30px;
+	display: flex;
+	align-items: center;
+	background: $white-dark;
+	transition: 0.2s;
+	cursor: pointer;
+
+	&:hover {
+		transition: 0.2s;
+		background: $white-dark;
+	}
+
+	&.btn-send {
+		border-radius: 5px;
+	}
+
+	&.btn-card {
+		padding: 5px 10px;
+	}
+
+	&.btn-primary {
+		background: $primary;
+		color: $white;
+		transition: 0.2s;
+
+		&:hover {
+			transition: 0.2s;
+			background: darken($primary, 5);
+		}
+	}
+
+	&:focus {
+		border: none;
+		box-shadow: none;
+		outline: none;
+	}
+}

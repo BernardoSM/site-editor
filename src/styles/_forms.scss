@@ -1,0 +1,132 @@
+.select-custom {
+    width: 100%;
+    height: 100%;
+
+    &.vs--open {
+
+        .vs__selected {
+            display: none;
+        }
+    }
+
+    .vs__no-options {
+        padding: 6 22px;
+    }
+
+    .vs__selected {
+        position: absolute;
+        top: 31px;
+        left: 5px;
+        font-style: normal;
+        font-weight: $semibold;
+        font-size: 14px;
+        line-height: 15px;
+        color: $gray;
+        transition: 0.2s;
+        pointer-events: none;
+        max-width: 313px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @media (max-width: 991px) {
+            max-width: 100%;
+            padding-right: 40px;
+        }
+    }
+
+    .vs__actions {
+        position: absolute;
+        right: 16px;
+        top: 17px;
+        pointer-events: none;
+
+        .vs__clear {
+            display: none;
+        }
+
+        svg {
+            opacity: 0.5;
+        }
+    }
+
+    input.vs__search {
+        cursor: pointer;
+        -webkit-appearance: none;
+        display: block;
+        width: 100%;
+        height: 53px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: $semibold;
+        font-size: 14px;
+        line-height: 15px;
+        color: $gray;
+        outline: none;
+        border-radius: 5px;
+        padding-top: 23px;
+        padding-left: 3px;
+        padding-right: 3px;
+        background: $gray-light;
+        border: 2px solid $gray-light;
+        box-sizing: border-box;
+        resize: none;
+
+        &:disabled {
+            color: $gray;
+        }
+
+        &:focus {
+            box-shadow: none;
+            border: none;
+            outline: none;
+            background: $white;
+            border: 2px solid $gray;
+        }
+
+        &:focus ~ .vs__selected {
+            font-size: 11px;
+            top: 5px;
+            left: 5px;
+        }
+
+        &:not(:placeholder-shown) ~ .vs__selected {
+            font-size: 11px;
+            top: 5px;
+            left: 5px;
+        }
+    }
+
+    .vs__dropdown-menu {
+        position: relative;
+        top: -4px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background-color: #dcdde1;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 2px solid #000;
+        background: #fff;
+        border-top: none;
+        padding-bottom: 10px;
+        max-height: 132px;
+        overflow-y: auto;
+        font-weight: $semibold;
+        font-size: 14px;
+        line-height: 17px;
+        color: $gray;
+        z-index: 999999;
+
+        .vs__dropdown-option {
+            padding: 6px 22px;
+            cursor: pointer;
+
+            &:hover {
+                background: $gray-light;
+            }
+        }
+    }
+
+
+}
